@@ -67,28 +67,7 @@ python src/resarch_tornament.py
 
 This script writes deterministic game logs, metrics, and aggregated JSON/CSV under `connect_four_research_output/` (or as configured in the script). To fully replicate the paper figures from the static data bundled in this repo, use the plotting helper below.
 
-## Regenerate the 4 Paper Figures from `data/`
 
-```bash
-python src/plot_from_data.py --in data --out figs
-```
-
-This produces exactly:
-- `fig_winrate_by_depth.png` — win rate vs. depth with 95% Wilson CIs
-- `fig_cost_benefit_time.png` — cost–benefit (time per move vs. win rate)
-- `fig_stage_winrates.png` — stage-specific win rates (opening/mid/end)
-- `fig_nodes_per_move_by_depth.png` — nodes per move vs. depth
-- `fig_prune_ratio_by_depth.png` — optional alpha–beta prune ratio vs. depth
-
-## LaTeX Integration
-
-Include the ready-to-use sections and figures:
-
-```latex
-\input{docs/latex/results.tex}
-\input{docs/latex/conclusions.tex}
-% figures are referenced in the .tex using paths like figs/fig_winrate_by_depth.png
-```
 
 ## Reproducibility Notes
 
@@ -96,14 +75,6 @@ Include the ready-to-use sections and figures:
 - Deterministic seeds are logged so all runs are reproducible.
 - Depths tested: 3, 5, 7 plies (can be changed in the script if you want more).
 
-## License
 
-MIT — see `LICENSE`.
 
-## Citation
 
-If you use this repository or its results, please cite:
-
-```
-Shifrin, N. (2025). Connect Four Heuristics Tournament (v1.0.0). MIT License.
-```
